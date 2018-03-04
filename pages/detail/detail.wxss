@@ -1,0 +1,15 @@
+/* pages/detail/detail.wxss */
+
+.detail-top{
+    display: flex;   
+}
+.tags{
+    display: flex;
+}
+.summary{
+    text-indent: 2em;
+}
+.count{
+    margin-right: 30rpx;
+    color: #CCC;
+}

@@ -1,0 +1,46 @@
+<block wx:if="{{showLoading}}">
+    <view class="page-loading">
+        <image class="img-loading" src="../../images/1.gif"></image>
+        <text>正在玩命加载中……</text>
+    </view>
+</block>
+<block wx:else>
+    <scroll-view class="sv" scroll-top="0" scroll-y="{{true}}" bindscrolltolower="scrolltolower">
+        <block wx:for="{{list}}"> 
+            <view class="mod-list" data-id="{{item.id}}" bindtap="redirect">
+                <view class="left">
+                    <image src="{{item.images.large}}"></image>
+                </view>
+                <view class="right">
+                    <view class="row">
+                        <view class="title">{{item.title}}</view>
+                        <view class="date">{{item.year}}</view>
+                    </view>
+                    <view class="row">
+                        <view class="tag">评分</view>
+                        <view class="rate">{{item.rating.average}}</view>
+                    </view>
+                    <view class="row">
+                        <view class="tag">导演</view>
+                        <view class="name" wx:for="{{item.directors}}" wx:for-item="d">{{d.name}}</view>
+                    </view>
+                    <view class="row">
+                        <view class="tag">主演</view>
+                        <view class="name" wx:for="{{item.casts}}" wx:for-item="c">{{c.name}}</view>
+                    </view>
+                </view>
+            </view>
+        </block>
+        <block wx:if="{{showMore}}">
+            <view class="page-loading">
+            <image class="img-loading" src="../../images/1.gif"></image>
+            <text>正在玩命加载中……</text>
+            </view>
+        </block>
+        <block wx:else>
+            <view class="page-loading">            
+            <text>没有更多内容了</text>
+            </view>
+        </block>
+    </scroll-view>
+</block>

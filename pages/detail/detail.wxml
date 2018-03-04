@@ -1,0 +1,41 @@
+<!--pages/detail/detail.wxml-->
+<view class="detail">
+    <view class="detail-top">
+        <view class="left">
+            <image src="{{list.images.large}}"></image>
+        </view>
+        <view class="right">
+            <view class="title">{{list.title}}</view>
+            <view class="tags">
+                <view class="tag">评分</view>
+                <view class="rate">{{list.rating.average}}</view>
+            </view>
+            <view class="tags">
+                <view class="tag">导演</view>
+                <view class="name" wx:for="{{list.directors}}" wx:for-item="d">{{d.name}}</view>
+            </view>
+            <view class="tags">
+                <view class="tag">主演</view>
+                <view class="name" wx:for="{{list.casts}}" wx:for-item="c">{{c.name}}</view>
+            </view>
+            <view class="tags">
+                <view class="tag">类别</view>
+                <view>{{list.genres}}</view>
+            </view>
+            <view class="tags">
+                <view class="tag">国家</view>
+                <view>{{list.countries}}</view>
+            </view>
+            <view class="tags">
+                <view class="tag">看过</view>
+                <view class="count">[{{list.reviews_count}}]</view>
+                <view class="tag">想看</view>
+                <view class="count">[{{list.wish_count}}]</view>
+            </view>
+        </view>
+    </view>
+    <view class="detail-bottom">
+        <view>剧情简介</view>
+        <view class="summary">{{list.summary}}</view>
+    </view>
+</view>
